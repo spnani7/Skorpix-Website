@@ -11172,7 +11172,7 @@ blockquote {
     .map-container {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 100;5
+      height: 100%;
     }
     .map-container iframe {
       position: absolute;
