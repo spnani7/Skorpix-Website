@@ -11180,8 +11180,13 @@ blockquote {
       height: 100%;
     }
 
-    @media (max-width: 767px) {
-        iframe {
-            height: 100px;
-        }
+    @media (max-width: 768px) {
+      /* Set a fixed height of 100px for mobile views */
+      .map-container {
+        padding-bottom: 0;
+        height: 100px;
+      }
+      .map-container iframe {
+        height: 100px;
+      }
     }
