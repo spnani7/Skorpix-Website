@@ -11184,9 +11184,9 @@ blockquote {
       /* Set a fixed height of 100px for mobile views */
       .map-container {
         padding-bottom: 0;
-        height: 100px;
+        height: 400px;
       }
       .map-container iframe {
-        height: 100px;
+        height: 400px;
       }
     }
