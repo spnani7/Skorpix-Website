@@ -9881,7 +9881,7 @@ blockquote {
 @media screen and (max-width: 479px) {
     .base-container {
         margin-bottom: 25px;
-        height: 500px;
+        height: 650px;
     }
     .base-container.grid {
         grid-template-rows: auto auto auto;
