@@ -2348,7 +2348,6 @@ blockquote {
 
 .base-container {
     max-width: 1200px;
-    height:0;
     flex-direction: column;
     align-items: center;
     padding-left: 15px;
