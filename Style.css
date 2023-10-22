@@ -9880,6 +9880,7 @@ blockquote {
 @media screen and (max-width: 479px) {
     .base-container {
         margin-bottom: 25px;
+        height: 500px;
     }
     .base-container.grid {
         grid-template-rows: auto auto auto;
@@ -11178,15 +11179,4 @@ blockquote {
       left: 0;
       width: 100%;
       height: 100%;
-    }
-
-    @media (max-width: 768px) {
-      /* Set a fixed height of 100px for mobile views */
-      .map-container {
-        padding-bottom: 0;
-        height: 400px;
-      }
-      .map-container iframe {
-        height: 400px;
-      }
     }
