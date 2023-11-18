@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html data-wf-page="628264a917ada644a0a04850" data-wf-site="628264a917ada63feba04851" lang="en">
 
 <head>
@@ -79,6 +78,69 @@
                 opacity: 0;
             }
         }
+        
+        #loader {
+            position: absolute;
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+        }
+        
+        @keyframes loader {
+            0% {
+                left: -100px
+            }
+            100% {
+                left: 110%;
+            }
+        }
+        
+        #box {
+            width: 50px;
+            height: 50px;
+            background: #c9fa49;
+            animation: animate .5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 3px;
+        }
+        
+        @keyframes animate {
+            17% {
+                border-bottom-right-radius: 3px;
+            }
+            25% {
+                transform: translateY(9px) rotate(22.5deg);
+            }
+            50% {
+                transform: translateY(18px) scale(1, .9) rotate(45deg);
+                border-bottom-right-radius: 40px;
+            }
+            75% {
+                transform: translateY(9px) rotate(67.5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(90deg);
+            }
+        }
+        
+        #shadow {
+            width: 50px;
+            height: 5px;
+            background: #000;
+            opacity: 0.1;
+            position: absolute;
+            top: 59px;
+            left: 0;
+            border-radius: 50%;
+            animation: shadow .5s linear infinite;
+        }
+        
+        @keyframes shadow {
+            50% {
+                transform: scale(1.2, 1);
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
@@ -110,307 +172,318 @@
         gtag('js', new Date());
         gtag('set', 'developer_id.dZGVlNj', true);
         gtag('config', 'G-YF94EQW4YC');
+
+        setTimeout(function() {
+            $("#content").css("opacity", 1);
+            $("#loader").css("opacity", 0);
+        }, 4000);
     </script>
 </head>
 
 <body>
-    <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-doc-height="1" role="banner" class="navbar about-us w-nav">
-        <div class="container-nav w-container">
-            <a href="/" aria-current="page" class="brand-2 w-nav-brand w--current">
-                <img src="./Assests/Logo1.svg" height="55" loading="lazy" alt="" style="margin-top: 30px;" />
-            </a>
-            <div class="nav-menu-wrapper">
-                <nav role="navigation" class="nav-menu w-nav-menu">
-                    <div class="nav-menu-shadow-overlay">
-                        <div class="nav-menu">
-                            <div class="tablet-menu">
-                                <a href="#" class="logo-mobile w-nav-brand">
-                                    <img src="./Assests/Logo1.svg" loading="lazy" alt="" height="14" class="image-3" />
-                                </a>
-                                <div class="close-menu-button w-nav-button">
-                                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628747ec4a1b0be4a1a0b344_Close%20Icon.svg" loading="lazy" alt="" class="nav-close-icon" />
+    <div id="loader">
+        <div id="shadow"></div>
+        <div id="box"></div>
+    </div>
+    <div id="content" style="opacity: 0;">
+        <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-doc-height="1" role="banner" class="navbar about-us w-nav">
+            <div class="container-nav w-container">
+                <a href="/" aria-current="page" class="brand-2 w-nav-brand w--current">
+                    <img src="./Assests/Logo1.svg" height="55" loading="lazy" alt="" style="margin-top: 30px;" />
+                </a>
+                <div class="nav-menu-wrapper">
+                    <nav role="navigation" class="nav-menu w-nav-menu">
+                        <div class="nav-menu-shadow-overlay">
+                            <div class="nav-menu">
+                                <div class="tablet-menu">
+                                    <a href="#" class="logo-mobile w-nav-brand">
+                                        <img src="./Assests/Logo1.svg" loading="lazy" alt="" height="14" class="image-3" />
+                                    </a>
+                                    <div class="close-menu-button w-nav-button">
+                                        <img src="https://assets.website-files.com/628264a917ada63feba04851/628747ec4a1b0be4a1a0b344_Close%20Icon.svg" loading="lazy" alt="" class="nav-close-icon" />
+                                    </div>
                                 </div>
+                                <a href="./index.html" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
+                                <a href="./aboutus.html" class="nav-link w-nav-link">About Us</a>
+                                <a href="./ourpricing.html" class="nav-link w-nav-link">Our Services</a>
+                                <a href="./tour.html" class="nav-link w-nav-link">360 Virtual Tours</a>
+                                <a href="./contactus.html" class="nav-link w-nav-link">Contact Us</a>
                             </div>
-                            <a href="./index.html" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
-                            <a href="./aboutus.html" class="nav-link w-nav-link">About Us</a>
-                            <a href="./ourpricing.html" class="nav-link w-nav-link">Our Services</a>
-                            <a href="./tour.html" class="nav-link w-nav-link">360 Virtual Tours</a>
-                            <a href="./contactus.html" class="nav-link w-nav-link">Contact Us</a>
+                        </div>
+                    </nav>
+                </div>
+                <a data-w-id="c8f0b93f-0580-4c76-a3ba-df1b2508fe76" href="./contactus.html" class="button-light menu w-inline-block">
+                    <div class="text-button-light">Get Started</div>
+                    <div class="button-div"></div>
+                </a>
+                <div class="menu-button w-nav-button">
+                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628743fd86cf3d123a4f065e_Burger%20Menu%20Icon.svg" loading="lazy" alt="" height="16" />
+                </div>
+            </div>
+        </div>
+        <div class="section-home">
+            <div data-w-id="5815d5ff-4a40-ae96-a40c-2c4488e11b8b" class="background">
+                <div>
+                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628f66501028627b3cebd249_12.png" loading="lazy" data-w-id="34baa34a-c7a2-5b90-6526-304778f5a2a0" alt="" class="triangle-absolute-left-home" />
+                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628f665157364f0098b31000_11.png" loading="lazy" data-w-id="8db5bbb4-08a3-7c75-c7d9-d5122971d637" alt="" class="circle-absolute-left-home" />
+                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628f665141b82e62995bd690_13.png" loading="lazy" data-w-id="b28bee8a-0b74-b326-fe0f-063364d623c4" alt="" class="square-absolute-left-home" />
+                </div>
+                <div>
+                    <img src="https://assets.website-files.com/628264a917ada63feba04851/6290ee49d04f6920d63e460f_Right.png" loading="lazy" data-w-id="eb20521c-aac3-57f1-9375-7bd6ad438164" alt="" class="square-absolute-right-home" />
+                    <img src="https://assets.website-files.com/628264a917ada63feba04851/6290ee482047ab42b37f0e39_Right%201.png" loading="lazy" data-w-id="aadd09e7-676d-d661-c371-97632e9af495" alt="" class="circle-absolute-right-home" />
+                    <img src="https://assets.website-files.com/628264a917ada63feba04851/6290ee499a21b274c2b5574a_Right%202.png" loading="lazy" data-w-id="6657feae-1597-df8f-b149-553d1d8ecb47" alt="" class="triangle-absolute-right-home" />
+                </div>
+            </div>
+            <div class="base-container w-container">
+                <h1 data-w-id="2b496ec7-5038-d008-664d-94bc8fa45baa" style="opacity:0" class="heading">
+                    Bringing the physical<br/>world into the Digital
+                </h1>
+                <div data-w-id="34f87250-a789-9a2f-f44a-1731bfd81d4c" style="opacity:0" class="centered">
+                    <p class="paragraph-large size">Boost your online presence and showcase the best angles of your business, Inside and Out</p>
+                </div>
+                <div class="w-layout-grid grid-button">
+                    <div id="w-node-c26da234-5a76-74d8-853a-6dbaf6724fc4-a0a04850" data-w-id="c26da234-5a76-74d8-853a-6dbaf6724fc4" style="opacity:0">
+                        <a data-w-id="4ea43fc6-1df1-2cc4-1d60-18f12f9cf842" href="./contactus.html" class="button-green w-inline-block">
+                            <div class="text-button-green">Get Started</div>
+                            <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                class="button-div-green"></div>
+                        </a>
+                    </div>
+                    <div id="w-node-_2ff42445-5f4d-ad9a-4925-2bbba5782e81-a0a04850" class="pop-up-video">
+                        <a href="#" data-w-id="55a0d89e-d3ab-3407-206c-38ded44d4b0a" style="opacity:0; cursor: pointer; text-decoration: none; display: inline-block;" onclick="openModal();">
+                            <img src="https://assets.website-files.com/628264a917ada63feba04851/6287aa06d7aa5b1af89760ab_Vector%20896.svg" loading="lazy" alt="" />
+                        </a>
+                        <p data-w-id="166afdd6-070c-4299-1b53-86002e6416c8" style="opacity:0" class="paragraph-large">How It Works</p>
+                    </div>
+                    <!-- Modal (placed outside the link) -->
+                    <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1; text-align: center;" onclick="closeModal();">
+                        <div class="modal-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 0;">
+                            <!-- Embed the YouTube video here -->
+                            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="700" height="400" type="text/html" src="https://www.youtube.com/embed/9CLYaukFmMw?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=hd1080&origin=https://youtubeembedcode.com"></iframe>
                         </div>
                     </div>
-                </nav>
-            </div>
-            <a data-w-id="c8f0b93f-0580-4c76-a3ba-df1b2508fe76" href="./contactus.html" class="button-light menu w-inline-block">
-                <div class="text-button-light">Get Started</div>
-                <div class="button-div"></div>
-            </a>
-            <div class="menu-button w-nav-button">
-                <img src="https://assets.website-files.com/628264a917ada63feba04851/628743fd86cf3d123a4f065e_Burger%20Menu%20Icon.svg" loading="lazy" alt="" height="16" />
-            </div>
-        </div>
-    </div>
-    <div class="section-home">
-        <div data-w-id="5815d5ff-4a40-ae96-a40c-2c4488e11b8b" class="background">
-            <div>
-                <img src="https://assets.website-files.com/628264a917ada63feba04851/628f66501028627b3cebd249_12.png" loading="lazy" data-w-id="34baa34a-c7a2-5b90-6526-304778f5a2a0" alt="" class="triangle-absolute-left-home" />
-                <img src="https://assets.website-files.com/628264a917ada63feba04851/628f665157364f0098b31000_11.png" loading="lazy" data-w-id="8db5bbb4-08a3-7c75-c7d9-d5122971d637" alt="" class="circle-absolute-left-home" />
-                <img src="https://assets.website-files.com/628264a917ada63feba04851/628f665141b82e62995bd690_13.png" loading="lazy" data-w-id="b28bee8a-0b74-b326-fe0f-063364d623c4" alt="" class="square-absolute-left-home" />
-            </div>
-            <div>
-                <img src="https://assets.website-files.com/628264a917ada63feba04851/6290ee49d04f6920d63e460f_Right.png" loading="lazy" data-w-id="eb20521c-aac3-57f1-9375-7bd6ad438164" alt="" class="square-absolute-right-home" />
-                <img src="https://assets.website-files.com/628264a917ada63feba04851/6290ee482047ab42b37f0e39_Right%201.png" loading="lazy" data-w-id="aadd09e7-676d-d661-c371-97632e9af495" alt="" class="circle-absolute-right-home" />
-                <img src="https://assets.website-files.com/628264a917ada63feba04851/6290ee499a21b274c2b5574a_Right%202.png" loading="lazy" data-w-id="6657feae-1597-df8f-b149-553d1d8ecb47" alt="" class="triangle-absolute-right-home" />
-            </div>
-        </div>
-        <div class="base-container w-container">
-            <h1 data-w-id="2b496ec7-5038-d008-664d-94bc8fa45baa" style="opacity:0" class="heading">
-                Bringing the physical<br/>world into the Digital
-            </h1>
-            <div data-w-id="34f87250-a789-9a2f-f44a-1731bfd81d4c" style="opacity:0" class="centered">
-                <p class="paragraph-large size">Boost your online presence and showcase the best angles of your business, Inside and Out</p>
-            </div>
-            <div class="w-layout-grid grid-button">
-                <div id="w-node-c26da234-5a76-74d8-853a-6dbaf6724fc4-a0a04850" data-w-id="c26da234-5a76-74d8-853a-6dbaf6724fc4" style="opacity:0">
-                    <a data-w-id="4ea43fc6-1df1-2cc4-1d60-18f12f9cf842" href="./contactus.html" class="button-green w-inline-block">
-                        <div class="text-button-green">Get Started</div>
-                        <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                            class="button-div-green"></div>
-                    </a>
-                </div>
-                <div id="w-node-_2ff42445-5f4d-ad9a-4925-2bbba5782e81-a0a04850" class="pop-up-video">
-                    <a href="#" data-w-id="55a0d89e-d3ab-3407-206c-38ded44d4b0a" style="opacity:0; cursor: pointer; text-decoration: none; display: inline-block;" onclick="openModal();">
-                        <img src="https://assets.website-files.com/628264a917ada63feba04851/6287aa06d7aa5b1af89760ab_Vector%20896.svg" loading="lazy" alt="" />
-                    </a>
-                    <p data-w-id="166afdd6-070c-4299-1b53-86002e6416c8" style="opacity:0" class="paragraph-large">How It Works</p>
-                </div>
-                <!-- Modal (placed outside the link) -->
-                <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1; text-align: center;" onclick="closeModal();">
-                    <div class="modal-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 0;">
-                        <!-- Embed the YouTube video here -->
-                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="700" height="400" type="text/html" src="https://www.youtube.com/embed/9CLYaukFmMw?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=hd1080&origin=https://youtubeembedcode.com"></iframe>
-                    </div>
-                </div>
-                <script>
-                    // JavaScript functions to open and close the modal
-                    function openModal() {
-                        var modal = document.getElementById('videoModal');
-                        modal.style.display = 'block';
-                    }
+                    <script>
+                        // JavaScript functions to open and close the modal
+                        function openModal() {
+                            var modal = document.getElementById('videoModal');
+                            modal.style.display = 'block';
+                        }
 
-                    function closeModal() {
-                        var modal = document.getElementById('videoModal');
-                        modal.style.display = 'none';
-                    }
-                </script>
+                        function closeModal() {
+                            var modal = document.getElementById('videoModal');
+                            modal.style.display = 'none';
+                        }
+                    </script>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="partners"></div>
-    </div>
-    <div class="section-dark right-gradient">
-        <div class="base-container w-container">
-            <div class="columns first-colomns w-row">
-                <div data-w-id="a3a47119-1853-44d8-8147-561031f65364" style="opacity:0" class="column w-col w-col-6">
-                    <h5>About Us</h5>
-                    <div class="h2-block">
-                        <h2>Skorpix: Your 360 Virtual Tour Experts</h2>
+        <div class="partners"></div>
+        <div class="section-dark right-gradient">
+            <div class="base-container w-container">
+                <div class="columns first-colomns w-row">
+                    <div data-w-id="a3a47119-1853-44d8-8147-561031f65364" style="opacity:0" class="column w-col w-col-6">
+                        <h5>About Us</h5>
+                        <div class="h2-block">
+                            <h2>Skorpix: Your 360 Virtual Tour Experts</h2>
+                        </div>
+                        <div class="paragraph-margin">
+                            <p class="paragraph-large">At Skorpix, we take great pride in being recognized as Google Trusted Photographers. Our mission is to bring businesses to life online through immersive and high-resolution Google 360 tours. We've successfully showcased the
+                                dynamic interiors of various prominent businesses across the nation.</p>
+                        </div>
+                        <div class="button-margin">
+                            <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" href="./contactus.html" class="button-light w-inline-block">
+                                <div class="text-button-light">Get Started</div>
+                                <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                    class="button-div"></div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="paragraph-margin">
-                        <p class="paragraph-large">At Skorpix, we take great pride in being recognized as Google Trusted Photographers. Our mission is to bring businesses to life online through immersive and high-resolution Google 360 tours. We've successfully showcased the dynamic interiors of various prominent businesses across the nation.</p>
+                    <div class="column image w-col w-col-6">
+                        <img class="image-phone" src="./Assests/clark-tibbs-oqStl2L5oxI-unsplash.jpg" alt="" style="opacity:0" sizes="(max-width: 479px) 100vw, (max-width: 767px) 65vw, (max-width: 991px) 42vw, (max-width: 1279px) 47vw, 540px" data-w-id="e4a87ad9-f278-1715-9c4b-ae0dc8b21e7f"
+                        />
                     </div>
-                    <div class="button-margin">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" href="./contactus.html" class="button-light w-inline-block">
-                            <div class="text-button-light">Get Started</div>
-                            <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                                class="button-div"></div>
+                </div>
+                <div class="columns w-row">
+                    <div class="column-block w-col w-col-6">
+                        <img class="img-phone-card" src="./Assests/austin-chan-ukzHlkoz1IE-unsplash.jpg" alt="" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 43vw, 517.5px" loading="lazy">
+                    </div>
+                    <div data-w-id="66a18ae7-3a48-0b60-a681-194f9a36aee1" style="opacity:0" class="column-block-info right w-col w-col-6">
+                        <div class="h2-block right">
+                            <h2>Why Choose Skorpix?</h2>
+                        </div>
+                        <div class="paragraph-margin">
+                            <p class="paragraph-large">We're not just another service provider; we're your creative collaborators. Our commitment to delivering top-tier, innovative solutions goes beyond industry standards. Here's why clients choose Skorpix:</p>
+                        </div>
+                        <div class="w-layout-grid grid">
+                            <div id="w-node-_8cfafd17-61c7-670b-84d3-89eb6ce2a8aa-a0a04850" class="centered-div">
+                                <img src="https://assets.website-files.com/628264a917ada63feba04851/628b6f6cd6c05f2741e2b151_Icon%201.svg" loading="lazy" alt="" />
+                                <h6 class="heading-3-color">Immersive Experiences</h6>
+                                <p class="paragraph-color">We understand the power of immersion. Our cutting-edge technology and creative finesse combine to craft immersive experiences that captivate your audience.</p>
+                            </div>
+                            <div id="w-node-_375b864a-cfe6-44ae-af61-319e8645f8ef-a0a04850" class="centered-div">
+                                <img src="https://assets.website-files.com/628264a917ada63feba04851/628b708612a4d62bbd779e4a_chart-wave-rectangle.svg" loading="lazy" alt="" />
+                                <h6 class="heading-3-color">Tailored Solutions</h6>
+                                <p class="paragraph-color">Whether it's your property, products, or services, we customize our solutions to fit your unique needs. Your vision is our blueprint.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-dark without-bottom-spacing">
+            <div class="base-container w-container">
+                <div data-w-id="bc15651d-8166-fab2-a95f-1b13fb92dc42" style="opacity:0" class="w-layout-grid grid-completely">
+                    <div class="div-content">
+                        <h2 id="w-node-ede885c1-3632-942c-f0d7-1d5bd86cb772-a0a04850" class="align-center">Crafting Immersive Experiences</h2>
+                        <div class="paragraph-large-spacing">
+                            <p id="w-node-dfedf168-0b04-c685-a505-f4d5fb3fce2c-a0a04850" class="paragraph-large">At Skorpix, we're masters of creating immersive and engaging encounters for your customers. Our secret? It's a fusion of cutting-edge technology and boundless creativity. Reach out today and discover the path to your business
+                                triumph.
+                            </p>
+                        </div>
+                        <div class="button-margin">
+                            <a data-w-id="243d81aa-c2ca-aaff-823b-4a8a0518948c" href="./contactus.html" class="button-light w-inline-block">
+                                <div class="text-button-light">Get Started</div>
+                                <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                    class="button-div"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <img src="./Assests/pexels-parna-gohil-3716556.jpg" loading="lazy" id="w-node-f813ad95-a9c5-07e6-7da0-0fd43cac10d8-a0a04850" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 47vw, 672px" class="img-crypto" />
+                </div>
+            </div>
+        </div>
+        <div class="section-dark without-bottom-spacing">
+            <div class="base-container w-container">
+                <div data-delay="4000" data-animation="slide" class="slider w-slider" data-autoplay="false" data-easing="ease" style="opacity:0" data-hide-arrows="false" data-disable-swipe="false" data-w-id="89de871a-4980-597f-48eb-b1cd6b2c20d6" data-autoplay-limit="0"
+                    data-nav-spacing="3" data-duration="500" data-infinite="true">
+                    <div class="w-slider-mask">
+                        <div class="w-slide">
+                            <div class="customers">
+                                <div id="w-node-ef09785c-79a8-9570-e303-7924601db368-a0a04850" class="photo-customers">
+                                    <img src="./Assests/Empty.png" loading="lazy" alt="" class="photo" />
+                                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628cbb4e61a07c5fca22a7fc_Ellipse%209.svg" loading="lazy" alt="" class="decoration" />
+                                </div>
+                                <div id="w-node-_432dfaf7-18ef-5e41-6e27-665f136c9fe4-a0a04850" class="content-block">
+                                    <h5>TESTIMONIALS</h5>
+                                    <h2 class="align-center">What our customers are saying</h2>
+                                    <div class="block-response">
+                                        <p class="paragraph-large">“Skorpix has been a game-changer for our real estate business. Their 360 virtual tours are nothing short of magical. Our clients are blown away by the immersive experience, and we've seen a significant increase
+                                            in property inquiries. Skorpix's innovative approach and attention to detail are unmatched. Highly recommend!”</p>
+                                    </div>
+                                    <div class="name-position start">
+                                        <h5 class="name">Karthik Raghavan Iyer</h5>
+                                        <h6 class="position">RMS RealEstate Private Limited</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-slide">
+                            <div class="customers">
+                                <div id="w-node-_4bb5cd09-90b8-b041-ee99-08c91ad7759f-a0a04850" class="photo-customers">
+                                    <img src="./Assests/Empty.png" loading="lazy" alt="" class="photo" />
+                                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628cbb4e61a07c5fca22a7fc_Ellipse%209.svg" loading="lazy" alt="" class="decoration" />
+                                </div>
+                                <div id="w-node-_4bb5cd09-90b8-b041-ee99-08c91ad775a2-a0a04850" class="content-block">
+                                    <h5>TESTIMONIALS</h5>
+                                    <h2 class="heading-12">What our customers are saying</h2>
+                                    <div class="block-response">
+                                        <p class="paragraph-large">“Skorpix is our go-to partner for showcasing our luxury resort. The 360 virtual tour they created is simply breathtaking. It has become a vital part of our marketing toolkit. The team at Skorpix is not just professional
+                                            but also highly creative. They bring ideas to life seamlessly. We couldn't be happier with the results.”</p>
+                                    </div>
+                                    <div class="name-position start">
+                                        <h5 class="name">Arjun Kumar Rajendran
+                                            <Ri:a></Ri:a>
+                                        </h5>
+                                        <h6 class="position">Designer of L&T</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-slide">
+                            <div class="customers">
+                                <div id="w-node-c9c5c47e-b2c8-d61c-5251-217a836d8e54-a0a04850" class="photo-customers">
+                                    <img src="./Assests/Empty.png" loading="lazy" alt="" class="photo" />
+                                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628cbb4e61a07c5fca22a7fc_Ellipse%209.svg" loading="lazy" alt="" class="decoration" />
+                                </div>
+                                <div id="w-node-c9c5c47e-b2c8-d61c-5251-217a836d8e57-a0a04850" class="content-block">
+                                    <h5>TESTIMONIALS</h5>
+                                    <h2 class="heading-13">What our customers are saying</h2>
+                                    <div class="block-response">
+                                        <p class="paragraph-large">“Skorpix's photography services have transformed our e-commerce website. The product images are so captivating that our sales have soared. Their marketing strategies are spot-on, and they truly understand how to
+                                            connect with our target audience. Working with Skorpix has been a game-changer for us.”</p>
+                                    </div>
+                                    <div class="name-position start">
+                                        <h5 class="name">Priya Devi Sundaram</h5>
+                                        <h6 class="position">Photographer</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-arrow w-slider-arrow-left">
+                        <img src="https://assets.website-files.com/628264a917ada63feba04851/628cc9ff6b914647eebc0167_Left%20.svg" loading="lazy" alt="" class="lest-arrow" />
+                    </div>
+                    <div class="right-arrow w-slider-arrow-right">
+                        <img src="https://assets.website-files.com/628264a917ada63feba04851/62876d568ecb83578d98ea42_Arrow.svg" loading="lazy" alt="" class="right-arrow-icon" />
+                    </div>
+                    <div class="slide-nav w-slider-nav w-round"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container w-container">
+                <div class="footer-wrapper-flex">
+                    <div class="footer-brand-2">
+                        <a href="/" aria-current="page" class="footer-icon w-nav-brand w--current">
+                            <img src="./Assests/bottom-logo-2.svg" height="100" style="margin-top: 5px;" loading="lazy" alt="" />
+                        </a>
+                        <div id="w-node-_3ba45ca6-b92e-4ab1-fd64-6777bc03205a-634f2c73" class="icon-block">
+                            <a href="https://www.instagram.com/skorpix360/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank" class="footer-social-icon-2 first"></a>
+                            <!-- <a href="#" target="_blank" class="footer-social-icon-2"></a> -->
+                            <a href="https://www.linkedin.com/in/skorpix-b7656a294/" target="_blank" class="footer-social-icon-2"></a>
+                        </div>
+                        <p id="w-node-_3ba45ca6-b92e-4ab1-fd64-6777bc032058-634f2c73" class="paragraph-green">
+                            If you're talented and looking for a job, contact us here.
+                        </p>
+                        <div id="w-node-_329b2ba4-2948-dd41-9af9-096b11cf211c-634f2c73" class="form-block-email w-form">
+                            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="628264a917ada644a0a04850" data-wf-element-id="329b2ba4-2948-dd41-9af9-096b11cf211d">
+                                <input type="email" class="text-field-2 w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required="" />
+                                <input type="submit" value="Send Email" data-wait="Please wait..." class="submit-button-2 w-button" />
+                            </form>
+                            <div class="success-message w-form-done">
+                                <div class="text-secces-message">Thank you! Your submission has been received!</div>
+                            </div>
+                            <div class="w-form-fail">
+                                <div>Oops! Something went wrong while submitting the form.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-email-wrapper">
+                        <a id="w-node-_8c5e9af6-5b0a-bbdf-0c08-98d51a9cac56-634f2c73" href="./aboutus.html" class="link-footer w-inline-block">
+                            <h6 id="w-node-_974793c3-28bf-cfbf-1d6b-f02d4d43ef77-634f2c73" class="heading-footer">About Us</h6>
+                        </a>
+                        <a id="w-node-_7eaa4e0d-93c0-ee96-ca55-1f3438dc73ce-634f2c73" href="./ourpricing.html" class="link-footer w-inline-block">
+                            <h6 id="w-node-_53f0483b-5e77-3c99-3614-179e2912ee0f-634f2c73" class="heading-footer">Our Services</h6>
+                        </a>
+                        <a id="w-node-_3d031d66-6aed-7968-06fc-b477b71bd597-634f2c73" href="./tour.html" class="link-footer w-inline-block">
+                            <h6 id="w-node-bf04e079-80d5-7cd6-7035-610d76fb49f7-634f2c73" class="heading-footer">360 Virtual Tours</h6>
+                        </a>
+                        <a id="w-node-_6c1ed413-8606-7783-5773-cd34d11d127f-634f2c73" href="./contactus.html" class="link-footer w-inline-block">
+                            <h6 id="w-node-bf04e079-80d5-7cd6-7035-610d76fb49f7-634f2c73" class="heading-footer">Contact Us</h6>
                         </a>
                     </div>
                 </div>
-                <div class="column image w-col w-col-6">
-                    <img class="image-phone" src="./Assests/clark-tibbs-oqStl2L5oxI-unsplash.jpg" alt="" style="opacity:0" sizes="(max-width: 479px) 100vw, (max-width: 767px) 65vw, (max-width: 991px) 42vw, (max-width: 1279px) 47vw, 540px" data-w-id="e4a87ad9-f278-1715-9c4b-ae0dc8b21e7f"
-                    />
-                </div>
             </div>
-            <div class="columns w-row">
-                <div class="column-block w-col w-col-6">
-                    <img class="img-phone-card" src="./Assests/austin-chan-ukzHlkoz1IE-unsplash.jpg" alt="" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                        sizes="(max-width: 767px) 100vw, (max-width: 1279px) 43vw, 517.5px" loading="lazy">
-                </div>
-                <div data-w-id="66a18ae7-3a48-0b60-a681-194f9a36aee1" style="opacity:0" class="column-block-info right w-col w-col-6">
-                    <div class="h2-block right">
-                        <h2>Why Choose Skorpix?</h2>
-                    </div>
-                    <div class="paragraph-margin">
-                        <p class="paragraph-large">We're not just another service provider; we're your creative collaborators. Our commitment to delivering top-tier, innovative solutions goes beyond industry standards. Here's why clients choose Skorpix:</p>
-                    </div>
-                    <div class="w-layout-grid grid">
-                        <div id="w-node-_8cfafd17-61c7-670b-84d3-89eb6ce2a8aa-a0a04850" class="centered-div">
-                            <img src="https://assets.website-files.com/628264a917ada63feba04851/628b6f6cd6c05f2741e2b151_Icon%201.svg" loading="lazy" alt="" />
-                            <h6 class="heading-3-color">Immersive Experiences</h6>
-                            <p class="paragraph-color">We understand the power of immersion. Our cutting-edge technology and creative finesse combine to craft immersive experiences that captivate your audience.</p>
+            <div class="copyrates-block">
+                <div class="container-footer w-container">
+                    <div class="copyrates">
+                        <div class="inline-block-first">
+                            © Skorpix. All Rights Reserved 2023. <a href="#" class="link">Licensing & Terms</a>
                         </div>
-                        <div id="w-node-_375b864a-cfe6-44ae-af61-319e8645f8ef-a0a04850" class="centered-div">
-                            <img src="https://assets.website-files.com/628264a917ada63feba04851/628b708612a4d62bbd779e4a_chart-wave-rectangle.svg" loading="lazy" alt="" />
-                            <h6 class="heading-3-color">Tailored Solutions</h6>
-                            <p class="paragraph-color">Whether it's your property, products, or services, we customize our solutions to fit your unique needs. Your vision is our blueprint.</p>
+                        <div class="inliine-block">
+                            Developed by <a href="#" target="_blank" class="link-3">Abisheke & Team</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section-dark without-bottom-spacing">
-        <div class="base-container w-container">
-            <div data-w-id="bc15651d-8166-fab2-a95f-1b13fb92dc42" style="opacity:0" class="w-layout-grid grid-completely">
-                <div class="div-content">
-                    <h2 id="w-node-ede885c1-3632-942c-f0d7-1d5bd86cb772-a0a04850" class="align-center">Crafting Immersive Experiences</h2>
-                    <div class="paragraph-large-spacing">
-                        <p id="w-node-dfedf168-0b04-c685-a505-f4d5fb3fce2c-a0a04850" class="paragraph-large">At Skorpix, we're masters of creating immersive and engaging encounters for your customers. Our secret? It's a fusion of cutting-edge technology and boundless creativity. Reach out today and discover the path to your business triumph.</p>
-                    </div>
-                    <div class="button-margin">
-                        <a data-w-id="243d81aa-c2ca-aaff-823b-4a8a0518948c" href="./contactus.html" class="button-light w-inline-block">
-                            <div class="text-button-light">Get Started</div>
-                            <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                                class="button-div"></div>
-                        </a>
-                    </div>
-                </div>
-                <img src="./Assests/pexels-parna-gohil-3716556.jpg" loading="lazy" id="w-node-f813ad95-a9c5-07e6-7da0-0fd43cac10d8-a0a04850" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 67vw, (max-width: 991px) 47vw, 672px" class="img-crypto" />
-            </div>
-        </div>
-    </div>
-    <div class="section-dark without-bottom-spacing">
-        <div class="base-container w-container">
-            <div data-delay="4000" data-animation="slide" class="slider w-slider" data-autoplay="false" data-easing="ease" style="opacity:0" data-hide-arrows="false" data-disable-swipe="false" data-w-id="89de871a-4980-597f-48eb-b1cd6b2c20d6" data-autoplay-limit="0"
-                data-nav-spacing="3" data-duration="500" data-infinite="true">
-                <div class="w-slider-mask">
-                    <div class="w-slide">
-                        <div class="customers">
-                            <div id="w-node-ef09785c-79a8-9570-e303-7924601db368-a0a04850" class="photo-customers">
-                                <img src="./Assests/Empty.png" loading="lazy" alt="" class="photo" />
-                                <img src="https://assets.website-files.com/628264a917ada63feba04851/628cbb4e61a07c5fca22a7fc_Ellipse%209.svg" loading="lazy" alt="" class="decoration" />
-                            </div>
-                            <div id="w-node-_432dfaf7-18ef-5e41-6e27-665f136c9fe4-a0a04850" class="content-block">
-                                <h5>TESTIMONIALS</h5>
-                                <h2 class="align-center">What our customers are saying</h2>
-                                <div class="block-response">
-                                    <p class="paragraph-large">“Skorpix has been a game-changer for our real estate business. Their 360 virtual tours are nothing short of magical. Our clients are blown away by the immersive experience, and we've seen a significant increase in property
-                                        inquiries. Skorpix's innovative approach and attention to detail are unmatched. Highly recommend!”</p>
-                                </div>
-                                <div class="name-position start">
-                                    <h5 class="name">Karthik Raghavan Iyer</h5>
-                                    <h6 class="position">RMS RealEstate Private Limited</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide">
-                        <div class="customers">
-                            <div id="w-node-_4bb5cd09-90b8-b041-ee99-08c91ad7759f-a0a04850" class="photo-customers">
-                                <img src="./Assests/Empty.png" loading="lazy" alt="" class="photo" />
-                                <img src="https://assets.website-files.com/628264a917ada63feba04851/628cbb4e61a07c5fca22a7fc_Ellipse%209.svg" loading="lazy" alt="" class="decoration" />
-                            </div>
-                            <div id="w-node-_4bb5cd09-90b8-b041-ee99-08c91ad775a2-a0a04850" class="content-block">
-                                <h5>TESTIMONIALS</h5>
-                                <h2 class="heading-12">What our customers are saying</h2>
-                                <div class="block-response">
-                                    <p class="paragraph-large">“Skorpix is our go-to partner for showcasing our luxury resort. The 360 virtual tour they created is simply breathtaking. It has become a vital part of our marketing toolkit. The team at Skorpix is not just professional
-                                        but also highly creative. They bring ideas to life seamlessly. We couldn't be happier with the results.”</p>
-                                </div>
-                                <div class="name-position start">
-                                    <h5 class="name">Arjun Kumar Rajendran
-                                        <Ri:a></Ri:a>
-                                    </h5>
-                                    <h6 class="position">Designer of L&T</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide">
-                        <div class="customers">
-                            <div id="w-node-c9c5c47e-b2c8-d61c-5251-217a836d8e54-a0a04850" class="photo-customers">
-                                <img src="./Assests/Empty.png" loading="lazy" alt="" class="photo" />
-                                <img src="https://assets.website-files.com/628264a917ada63feba04851/628cbb4e61a07c5fca22a7fc_Ellipse%209.svg" loading="lazy" alt="" class="decoration" />
-                            </div>
-                            <div id="w-node-c9c5c47e-b2c8-d61c-5251-217a836d8e57-a0a04850" class="content-block">
-                                <h5>TESTIMONIALS</h5>
-                                <h2 class="heading-13">What our customers are saying</h2>
-                                <div class="block-response">
-                                    <p class="paragraph-large">“Skorpix's photography services have transformed our e-commerce website. The product images are so captivating that our sales have soared. Their marketing strategies are spot-on, and they truly understand how to connect
-                                        with our target audience. Working with Skorpix has been a game-changer for us.”</p>
-                                </div>
-                                <div class="name-position start">
-                                    <h5 class="name">Priya Devi Sundaram</h5>
-                                    <h6 class="position">Photographer</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-arrow w-slider-arrow-left">
-                    <img src="https://assets.website-files.com/628264a917ada63feba04851/628cc9ff6b914647eebc0167_Left%20.svg" loading="lazy" alt="" class="lest-arrow" />
-                </div>
-                <div class="right-arrow w-slider-arrow-right">
-                    <img src="https://assets.website-files.com/628264a917ada63feba04851/62876d568ecb83578d98ea42_Arrow.svg" loading="lazy" alt="" class="right-arrow-icon" />
-                </div>
-                <div class="slide-nav w-slider-nav w-round"></div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="container w-container">
-            <div class="footer-wrapper-flex">
-                <div class="footer-brand-2">
-                    <a href="/" aria-current="page" class="footer-icon w-nav-brand w--current">
-                        <img src="./Assests/bottom-logo-2.svg" height="100" style="margin-top: 5px;" loading="lazy" alt="" />
-                    </a>
-                    <div id="w-node-_3ba45ca6-b92e-4ab1-fd64-6777bc03205a-634f2c73" class="icon-block">
-                        <a href="https://www.instagram.com/skorpix360/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank" class="footer-social-icon-2 first"></a>
-                        <!-- <a href="#" target="_blank" class="footer-social-icon-2"></a> -->
-                        <a href="https://www.linkedin.com/in/skorpix-b7656a294/" target="_blank" class="footer-social-icon-2"></a>
-                    </div>
-                    <p id="w-node-_3ba45ca6-b92e-4ab1-fd64-6777bc032058-634f2c73" class="paragraph-green">
-                        If you're talented and looking for a job, contact us here.
-                    </p>
-                    <div id="w-node-_329b2ba4-2948-dd41-9af9-096b11cf211c-634f2c73" class="form-block-email w-form">
-                        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="628264a917ada644a0a04850" data-wf-element-id="329b2ba4-2948-dd41-9af9-096b11cf211d">
-                            <input type="email" class="text-field-2 w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your email" id="email" required="" />
-                            <input type="submit" value="Send Email" data-wait="Please wait..." class="submit-button-2 w-button" />
-                        </form>
-                        <div class="success-message w-form-done">
-                            <div class="text-secces-message">Thank you! Your submission has been received!</div>
-                        </div>
-                        <div class="w-form-fail">
-                            <div>Oops! Something went wrong while submitting the form.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-email-wrapper">
-                    <a id="w-node-_8c5e9af6-5b0a-bbdf-0c08-98d51a9cac56-634f2c73" href="./aboutus.html" class="link-footer w-inline-block">
-                        <h6 id="w-node-_974793c3-28bf-cfbf-1d6b-f02d4d43ef77-634f2c73" class="heading-footer">About Us</h6>
-                    </a>
-                    <a id="w-node-_7eaa4e0d-93c0-ee96-ca55-1f3438dc73ce-634f2c73" href="./ourpricing.html" class="link-footer w-inline-block">
-                        <h6 id="w-node-_53f0483b-5e77-3c99-3614-179e2912ee0f-634f2c73" class="heading-footer">Our Services</h6>
-                    </a>
-                    <a id="w-node-_3d031d66-6aed-7968-06fc-b477b71bd597-634f2c73" href="./tour.html" class="link-footer w-inline-block">
-                        <h6 id="w-node-bf04e079-80d5-7cd6-7035-610d76fb49f7-634f2c73" class="heading-footer">360 Virtual Tours</h6>
-                    </a>
-                    <a id="w-node-_6c1ed413-8606-7783-5773-cd34d11d127f-634f2c73" href="./contactus.html" class="link-footer w-inline-block">
-                        <h6 id="w-node-bf04e079-80d5-7cd6-7035-610d76fb49f7-634f2c73" class="heading-footer">Contact Us</h6>
-                    </a>
-                </div>
-                <!-- <div class="footer-image">
-                </div> -->
-            </div>
-        </div>
-        <div class="copyrates-block">
-            <div class="container-footer w-container">
-                <div class="copyrates">
-                    <div class="inline-block-first">
-                        © Skorpix. All Rights Reserved 2023. <a href="#" class="link">Licensing & Terms</a>
-                    </div>
-                    <div class="inliine-block">
-                        Developed by <a href="#" target="_blank" class="link-3">Abisheke & Team</a>
                     </div>
                 </div>
             </div>
