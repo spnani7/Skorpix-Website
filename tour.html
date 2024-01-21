@@ -7,6 +7,7 @@
     <title>360 Virtual Tours | Skorpix</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="./Style.css" rel="stylesheet" type="text/css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <style>
         @media (min-width: 992px) {
             html.w-mod-js:not(.w-mod-ix) [data-w-id="3da56d92-07ba-63d3-4bc8-af630635e146"] {
@@ -177,6 +178,35 @@
         <div id="box"></div>
     </div>
     <div id="content" style="opacity: 0;">
+        <div class="chatbox-skorpix">
+            <div class="container chat-container opened">
+                <div class="welcome-mat" id="welcome-mat-1">
+                    <p class="welcome-header" style="font-family: Poppins, sans-serif;">Welcome to Skorpix 360!</p>
+                </div>
+                <div class="chat-content" id="formContainer" style="background-color: #202020;">
+                    <form id="myForm" onsubmit="submitForm(); return false;">
+                        <div class="form-group">
+                            <label for="name" style="color: #fff;font-family: Poppins, sans-serif;">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required style="font-family: Poppins, sans-serif;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile" style="color: #fff;font-family: Poppins, sans-serif;">Mobile Number</label>
+                            <input type="tel" class="form-control" id="mobile" placeholder="Your Mobile Number with Country Code" required pattern="[0-9]*" style="font-family: Poppins, sans-serif; font-size: 15px;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" style="color: #fff;font-family: Poppins, sans-serif;">Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Your Message" required style="font-family: Poppins, sans-serif;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin: auto;font-family: Poppins, sans-serif;">Submit</button>
+                        <p style="font-size: 12px; color: #fff;">By sending this message, you expressly consent to receive communications from us. You may opt out at any time.</p>
+                    </form>
+                </div>
+                <div class="chat-icon" onclick="toggleChat()"></div>
+            </div>
+        </div>
         <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-doc-height="1" role="banner" class="navbar about-us w-nav">
             <div class="container-nav w-container">
                 <a href="/" aria-current="page" class="brand-2 w-nav-brand w--current">
@@ -252,8 +282,8 @@
                         </a>
                     </div>
                     <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this), changeMapSource(3)">
-                            <div class="text-button-light">Cream Center RAP</div>
+                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this)">
+                            <div class="text-button-light">Yet to reveal</div>
                             <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(0.7, 0.7, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
                         </a>
                     </div>
@@ -384,7 +414,7 @@
                         mapFrame.src = 'https://www.google.com/maps/embed?pb=!4v1700377820452!6m8!1m7!1sCAoSLEFGMVFpcE4yeFQ5LVVRNHZiaENVSXkwdUptODNZbUlmdjFwX3IxRWh4X0xS!2m2!1d14.45849285069735!2d79.99548555878444!3f200!4f0!5f0.7820865974627469';
                         break;
                     case 3:
-                        mapFrame.src = 'https://www.google.com/maps/embed?pb=!4v1703748813142!6m8!1m7!1sCAoSLEFGMVFpcE9UN1ZRNHdSN0NfejQzaVBReG1hOTZWUXJfMWtWQzc2YUVZb19u!2m2!1d13.026834!2d80.2547992!3f219.84882523527668!4f-12.490394849216344!5f0.7820865974627469';
+                        mapFrame.src = 'URL_CASE_3';
                         break;
                     case 4:
                         mapFrame.src = 'URL_CASE_4';
@@ -409,6 +439,51 @@
         }
 
         window.onload = window.onresize = updateRightColumnHeight;
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".w-webflow-badge").removeClass("w-webflow-badge").empty();
+        });
+
+        function toggleChat() {
+            const chatContainer = document.querySelector('.chat-container');
+            chatContainer.classList.toggle('opened');
+            const chatContainer1 = document.querySelector('.welcome-mat');
+            chatContainer1.classList.toggle('opened');
+        }
+
+        function submitForm() {
+
+            // Get values from form fields
+            var name = document.querySelectorAll('input')[0].value;
+            var mobile = document.querySelectorAll('input')[1].value;
+            var message = document.querySelectorAll('textarea')[0].value;
+
+            const successMessage = document.createElement('div');
+            successMessage.className = 'submission-message';
+            successMessage.innerText = 'Submitted successfully!';
+
+            const formContainer = document.getElementById('formContainer');
+            formContainer.innerHTML = '';
+            formContainer.appendChild(successMessage);
+            var welcomemat = document.getElementById("welcome-mat-1");
+            welcomemat.remove();
+
+            let body = `<div style="background-color: black; color: white; padding: 20px; text-align: center;">
+                            <h1>Form Submission - Skorpix Website Message Panel - Response</h1>
+                            <p><strong>Name : ` + name + `</strong> </p>
+                            <p><strong>Mobile Number : ` + mobile + `</strong> </p>
+                            <p><strong>Message : ` + message + `</strong> </p>
+                        </div>`;
+
+            Email.send({
+                SecureToken: "83d7a2cb-65f3-475c-8bc9-88a0af64dbea",
+                To: 'skorpix07@gmail.com',
+                From: "skorpixemail@gmail.com",
+                Subject: "Submission Received from ChatBox",
+                Body: body,
+            });
+        }
     </script>
     <script src="https://js.usebasin.com/v2.0.0.min.js" async></script>
 </body>
