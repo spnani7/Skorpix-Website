@@ -156,6 +156,14 @@
                     </form>
                 </div>
                 <div class="chat-icon" onclick="toggleChat()"></div>
+                <span class="icon-button__badge" style="opacity: 0;">1</span>
+                <div class="notification-container" style="opacity: 0;">
+                    <div class="notification-arrow"></div>
+                    <button class="close-button">×</button>
+                    <div class="notification-content">
+                        Have a question about our 360 Virtual Tours?
+                    </div>
+                </div>
             </div>
         </div>
         <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-doc-height="1" role="banner" class="navbar about-us w-nav">
@@ -284,7 +292,7 @@
                             <form id="email-form" name="email-form" data-name="Email Form" data-wf-page-id="628264a917ada6b584a04860" data-wf-element-id="ea41af14-8b87-8ae8-ae5d-f8373dc8aafa" action="https://usebasin.com/f/328d856cf991" method="POST" enctype="multipart/form-data"
                                 data-basin-form data-basin-success-action='render'>
                                 <input type="text" class="contacts-input w-input" maxlength="256" name="Client Name" data-name="Name" placeholder="Your name *" id="name" required="" />
-                                <input type="text" class="contacts-input w-input" maxlength="256" name="Client Name / Phone" data-name="Email" placeholder="Your email or phone *" id="email" required="" />
+                                <input type="text" class="contacts-input w-input" maxlength="256" name="Client Email / Phone" data-name="Email" placeholder="Your email or phone *" id="email" required="" />
                                 <input type="text" class="contacts-input w-input" maxlength="256" name="Client Company Name" data-name="companyname" placeholder="Your company name *" required="" />
                                 <input type="text" class="contacts-input w-input" maxlength="256" name="Client Contact Place" data-name="contactplace" placeholder="What is the location for the 360-tour needed (Full Address) ? *" required="" />
                                 <input type="datetime" class="contacts-input w-input" maxlength="256" name="Client Contact Time" data-name="contacttime" placeholder="Best Day & Time To Contact You? *" required="" />
@@ -423,11 +431,20 @@
             chatContainer.classList.toggle('opened');
             const chatContainer1 = document.querySelector('.welcome-mat');
             chatContainer1.classList.toggle('opened');
+
+            var element1 = document.querySelector('.icon-button__badge');
+            var element2 = document.querySelector('.notification-container');
+
+            if (element1.style.opacity === '0') {
+                element1.style.opacity = '1';
+                element2.style.opacity = '1';
+            } else {
+                element1.style.opacity = '0';
+                element2.style.opacity = '0';
+            }
         }
 
         function submitForm() {
-
-            // Get values from form fields
             var name = document.querySelectorAll('input')[0].value;
             var mobile = document.querySelectorAll('input')[1].value;
             var message = document.querySelectorAll('textarea')[0].value;
@@ -457,6 +474,27 @@
                 Body: body,
             });
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var notificationContainer = document.querySelector('.notification-container');
+            var iconContainer = document.querySelector('.icon-button__badge');
+            var closeButton = document.querySelector('.close-button');
+
+            closeButton.addEventListener('click', function() {
+                notificationContainer.style.display = 'none';
+                iconContainer.style.display = "none";
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var element1 = document.querySelector('.icon-button__badge');
+            var element2 = document.querySelector('.notification-container');
+            var delay = 4000;
+            setTimeout(function() {
+                element1.style.opacity = 1;
+                element2.style.opacity = 1;
+            }, delay);
+        });
     </script>
     <script src="https://js.usebasin.com/v2.0.0.min.js" async></script>
 </body>

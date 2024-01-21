@@ -11475,3 +11475,62 @@ label {
 textarea.form-control {
     resize: vertical;
 }
+
+.icon-button__badge {
+    position: absolute;
+    bottom: 50px;
+    width: 30px;
+    height: 30px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+/* custom bubble arrow container css code here */
+
+.notification-container {
+    position: absolute;
+    bottom: 96px;
+    right: -7.5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.notification-arrow {
+    position: absolute;
+    bottom: -28px;
+    left: 88%;
+    transform: translateX(-50%) rotate(180deg);
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.notification-content {
+    color: #333;
+    text-align: left;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.close-button {
+    background-color: transparent;
+    float: right;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.close-button:hover {
+    color: #555;
+}
