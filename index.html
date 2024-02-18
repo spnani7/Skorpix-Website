@@ -6,6 +6,7 @@
     <title>Home | Skorpix</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="./Style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Assests/instafeed.min.js"></script>
     <style>
         @media (min-width: 992px) {
             html.w-mod-js:not(.w-mod-ix) [data-w-id="3da56d92-07ba-63d3-4bc8-af630635e146"] {
@@ -222,7 +223,8 @@
                         <a data-w-id="4ea43fc6-1df1-2cc4-1d60-18f12f9cf842" href="./contactus.html" class="button-green w-inline-block">
                             <div class="text-button-green">Get Started</div>
                             <div style="opacity:0;-webkit-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.7, 0.7, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                                class="button-div-green"></div>
+                                class="button-div-green">
+                            </div>
                         </a>
                     </div>
                     <div id="w-node-_2ff42445-5f4d-ad9a-4925-2bbba5782e81-a0a04850" class="pop-up-video">
@@ -470,6 +472,18 @@
                 </div>
             </div>
         </div>
+        <div class="section-dark" style="padding: 0px 0px 0px 0px !important">
+            <div class="insta-page-redirect" style="display: flex; align-items:center; justify-content: space-between; padding: 0px 5vw;">
+                <div class="insta-inner-div" style="display: flex; align-items:center; gap: 2vh;">
+                    <img src="./Assests/instagram-svgrepo-com.svg" alt="" style="height: 8vh; width: 8vh; border-radius: 50%;">
+                    <a href="https://www.instagram.com/skorpixofficial/" style="color: #c9fa49; text-decoration: none;">Skorpixofficial</a>
+                </div>
+            </div>
+            <div class="custom-container">
+                <div class="custom-image-container">
+                    <div id="instafeed"></div>
+                </div>
+            </div>
         <div class="footer">
             <div class="container w-container">
                 <div class="footer-wrapper-flex">
@@ -606,6 +620,15 @@
                 element2.style.opacity = 1;
             }, delay);
         });
+    </script>
+    <script type="text/javascript">
+        var feed = new Instafeed({
+          accessToken: 'IGQWROZAi1KbkdMOFR5ZA1RUMlRodHc3RnJTNFpKbDBFdkVGVUFJNUZA2UzYxUWgtUFBTWnFRd2NTUk4taGNfRmUyRTlqWmlKNjVpR0s4Qm1CM2NlTE5abnY0eG4tcTA4ZAGxhNWw5ZAEFYSmxIZADdaNkxjT1paQWFGalEZD',
+          resolution: 'high_resolution',
+          template: '<a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a>',
+          limit: 9,
+        });
+        feed.run();
     </script>
 </body>
 

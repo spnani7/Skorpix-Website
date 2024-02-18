@@ -11534,3 +11534,24 @@ textarea.form-control {
 .close-button:hover {
     color: #555;
 }
+.custom-container{
+    padding: 2rem 5%;
+}
+
+.custom-image-container{
+    columns: 15rem 3;
+    gap: 1.4rem;
+}
+
+.custom-container .custom-image-container img{
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 0.7rem;
+    border: 1.5px solid #c9fa49;
+    height: 50%;
+}
+
+.custom-container .custom-image-container img:hover{
+    transform: scale(1.02);
+    transition: 0.1s linear;
+}
