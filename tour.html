@@ -108,6 +108,22 @@
             display: flex;
             align-items: stretch;
         }
+
+        .places-wrapper {
+            overflow-y: auto;
+            height: 90%; /* Adjust as needed */
+        }
+
+        .pagination-controls {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .pagination-controls button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
         
         @media (max-width: 768px) {
             .left-column,
@@ -282,53 +298,13 @@
         <div class="section-dark without-bottom-spacing" id="mapDiv" style="height: 800px; padding-right: 25px; padding-left: 25px;">
             <div class="flex-container">
                 <div class="left-column" id="left-flex">
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this), changeMapSource(1)">
-                            <div class="text-button-light">KHALS Foot World</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
+                    <div id="places-wrapper" class="places-wrapper">
+                        <!-- tabs will be populated -->
                     </div>
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this), changeMapSource(2)">
-                            <div class="text-button-light">PSR Super Market</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
-                    </div>
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this), changeMapSource(3)">
-                            <div class="text-button-light">Cream Center | R A Puram</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(0.7, 0.7, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
-                    </div>
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this), changeMapSource(4)">
-                            <div class="text-button-light">UPAR Hotels</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(0.7, 0.7, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
-                    </div>
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this)">
-                            <div class="text-button-light">Yet to reveal</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(0.7, 0.7, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
-                    </div>
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this)">
-                            <div class="text-button-light">Yet to reveal</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
-                    </div>
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this)">
-                            <div class="text-button-light">Yet to reveal</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
-                    </div>
-                    <div class="tab">
-                        <a data-w-id="2f8cd4d9-e914-e4b7-2a94-44a2ba5f7ca7" style="width: 85%;" class="button-light w-inline-block" onclick="changeTextColor(this)">
-                            <div class="text-button-light">Yet to reveal</div>
-                            <div style="opacity: 0; transform: translate3d(0px, 0px, 0px) scale3d(0.7, 0.7, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="button-div"></div>
-                        </a>
+                    <div class="pagination-controls" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 10px; padding: 0px 30px">
+                        <button class="btn btn-primary" style="flex: 1; font-family: Poppins, sans-serif; line-height: 1.6em; border-radius: 30px;" onclick="paginate(-1)">Previous</button>
+                        <span id="page-number" style="min-width: 30px; text-align: center; font-family: Poppins, sans-serif; color: white !important">1</span>
+                        <button class="btn btn-primary" style="flex: 1; font-family: Poppins, sans-serif; line-height: 1.6em; border-radius: 30px;" onclick="paginate(1)">Next</button>
                     </div>
                 </div>
                 <div class="right-column" id="right-div">
@@ -414,39 +390,88 @@
 
         }
 
-        function changeMapSource(caseNumber) {
-            var mapFrame = document.getElementById('mapFrame');
-            if (mapFrame) {
-                switch (caseNumber) {
-                    case 1:
-                        mapFrame.src = 'https://www.google.com/maps/embed?pb=!4v1697982750377!6m8!1m7!1sCAoSLEFGMVFpcE5pUHJHSWdZNnJ4ZXJlYXg3dV9JbjVERkpKT1dIZjFtSUJfMG5W!2m2!1d13.07014437105097!2d80.22439861985802!3f51.198163594608104!4f-7.364746831009583!5f0.7820865974627469';
-                        break;
-                    case 2:
-                        mapFrame.src = 'https://www.google.com/maps/embed?pb=!4v1700377820452!6m8!1m7!1sCAoSLEFGMVFpcE4yeFQ5LVVRNHZiaENVSXkwdUptODNZbUlmdjFwX3IxRWh4X0xS!2m2!1d14.45849285069735!2d79.99548555878444!3f200!4f0!5f0.7820865974627469';
-                        break;
-                    case 3:
-                        mapFrame.src = 'https://www.google.com/maps/embed?pb=!4v1706167420399!6m8!1m7!1sCAoSLEFGMVFpcE1sNXdoSXpnUVNTczdfM2lXZGdlVUlfcjFBSGZ4amVnVDBiV3Fp!2m2!1d13.02682879513743!2d80.25480290726013!3f305.67!4f-11.61!5f0.4000000000000002';
-                        break;
-                    case 4:
-                        mapFrame.src = 'https://www.google.com/maps/embed?pb=!4v1734596841446!6m8!1m7!1sCAoSLEFGMVFpcE50ZGU3STRRc0I4VGlXVUpweDVlYjJtdmRDTHptTXVabnBOSVBu!2m2!1d13.05936928089697!2d80.24468487148089!3f193.3271653262763!4f-10.236923965696434!5f0.7820865974627469';
-                        break;
-                    case 5:
-                        mapFrame.src = 'URL_CASE_5';
-                        break;
-                    case 6:
-                        mapFrame.src = 'URL_CASE_6';
-                        break;
-                    default:
-                        console.error('Invalid case number.');
-                }
-            } else {
-                console.error('Map frame not found.');
-            }
+        const places = [
+            { name: "KHALS Foot World", mapSrc: "https://www.google.com/maps/embed?pb=!4v1697982750377!6m8!1m7!1sCAoSLEFGMVFpcE5pUHJHSWdZNnJ4ZXJlYXg3dV9JbjVERkpKT1dIZjFtSUJfMG5W!2m2!1d13.07014437105097!2d80.22439861985802!3f51.198163594608104!4f-7.364746831009583!5f0.7820865974627469" },
+            { name: "PSR Super Market", mapSrc: "https://www.google.com/maps/embed?pb=!4v1700377820452!6m8!1m7!1sCAoSLEFGMVFpcE4yeFQ5LVVRNHZiaENVSXkwdUptODNZbUlmdjFwX3IxRWh4X0xS!2m2!1d14.45849285069735!2d79.99548555878444!3f200!4f0!5f0.7820865974627469" },
+            { name: "Cream Center | R A Puram", mapSrc: "https://www.google.com/maps/embed?pb=!4v1706167420399!6m8!1m7!1sCAoSLEFGMVFpcE1sNXdoSXpnUVNTczdfM2lXZGdlVUlfcjFBSGZ4amVnVDBiV3Fp!2m2!1d13.02682879513743!2d80.25480290726013!3f305.67!4f-11.61!5f0.4000000000000002" },
+            { name: "UPAR Hotels", mapSrc: "https://www.google.com/maps/embed?pb=!4v1734596841446!6m8!1m7!1sCAoSLEFGMVFpcE50ZGU3STRRc0I4VGlXVUpweDVlYjJtdmRDTHptTXVabnBOSVBu!2m2!1d13.05936928089697!2d80.24468487148089!3f193.3271653262763!4f-10.236923965696434!5f0.7820865974627469" },
+            { name: "Jananam Fertility Centre Hospital", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751307192179!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzRzcF9kd3dF!2m2!1d12.95677659478445!2d80.25102991579145!3f98.017164756863!4f-11.289643932763283!5f0.7820865974627469" },
+            { name: "BMW KUN Exclusive - Chennai", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751310947768!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzBzcGFsMUFF!2m2!1d12.98558331687804!2d80.17402816711072!3f1.1682951370860906!4f-4.622044462743091!5f0.7820865974627469" },
+            { name: "Harsha Toyota", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751310997691!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRDQwSjdwU0E.!2m2!1d13.00725749316815!2d80.20652728009051!3f65.30204736865655!4f-4.006868929691848!5f0.7820865974627469" },
+            { name: "Horizon Mahindra - Kottayam", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311053894!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ1cyclhyS1E.!2m2!1d9.646128872216298!2d76.54709187378867!3f4.346070660285975!4f-4.607337196677491!5f0.7820865974627469" },
+            { name: "Sky Motors - Yamaha", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311089923!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzBqb3IxeFFF!2m2!1d12.94685879440529!2d80.24010011588936!3f0.6204635506025902!4f-5.573623254814123!5f0.7820865974627469" },
+            { name: "Decathlon Sports - OMR Perungudi", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311165375!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ0t2b2FobHdF!2m2!1d12.96578705439505!2d80.24812374360233!3f12.497181452757644!4f-1.0504538341724725!5f0.4000000000000002" },
+            { name: "Satya Paul", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311204685!6m8!1m7!1sCAoSK0FGMVFpcE1iaGdXc2FpXzNzSkY2MEpKcWVSMzVSMmNzSmtPMEQ3YUY0bUE.!2m2!1d12.9913006830489!2d80.21662946725777!3f335.18831770644397!4f5.376264752832043!5f0.4000000000000002" },
+            { name: "Shree Nikethan", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311249084!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJREVnLV9fWVE.!2m2!1d13.03381295051277!2d80.23031258821075!3f112.29512635631889!4f-6.591582104841223!5f0.7820865974627469" },
+            { name: "Calonge", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311288228!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQzQydmVQSEE.!2m2!1d12.9910904765658!2d80.21692802661116!3f353.07636464064507!4f4.803207925643136!5f0.7820865974627469" },
+            { name: "Vaya Store", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311330512!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRFdxZkRwVmc.!2m2!1d13.08479149066382!2d80.20988496398941!3f10.441733408020472!4f-4.326769412641923!5f0.7820865974627469" },
+            { name: "Croma Store", mapSrc: "https://www.google.com/maps/embed?pb=!4v1751311375838!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQzQtc0doUmc.!2m2!1d13.06660818479913!2d80.268826346175!3f194.47511977890935!4f-3.0142479334107293!5f0.7820865974627469" }
+        ];
+
+        let currentPage = 1;
+        const pageSize = 8;
+
+        function renderTabs() {
+        const wrapper = document.getElementById("places-wrapper");
+        wrapper.innerHTML = '';
+
+        const start = (currentPage - 1) * pageSize;
+        const end = start + pageSize;
+        const sliced = places.slice(start, end);
+
+        sliced.forEach((place, index) => {
+            const btn = document.createElement('a');
+            btn.className = 'button-light w-inline-block';
+            btn.style.width = "85%";
+            btn.onclick = () => {
+            changeTextColor(btn);
+            if (place.mapSrc) changeMapSourceCustom(place.mapSrc);
+            };
+
+            btn.innerHTML = `
+            <div class="text-button-light">${place.name}</div>
+            <div class="button-div" style="opacity: 0;"></div>
+            `;
+
+            const tab = document.createElement('div');
+            tab.className = 'tab';
+            tab.appendChild(btn);
+
+            wrapper.appendChild(tab);
+        });
+
+        document.getElementById("page-number").textContent = currentPage;
         }
 
+        function paginate(direction) {
+        const totalPages = Math.ceil(places.length / pageSize);
+        currentPage = Math.min(Math.max(currentPage + direction, 1), totalPages);
+        renderTabs();
+        }
+
+        function changeMapSourceCustom(mapUrl) {
+        const mapFrame = document.getElementById('mapFrame');
+        mapFrame.src = mapUrl;
+        }
+
+        document.addEventListener('DOMContentLoaded', renderTabs);
+
         function changeTextColor(element) {
-            element.querySelector('.text-button-light').style.color = 'black';
-            element.querySelector('.button-div').style.opacity = 1;
+            // Remove styles from all .button-light elements
+            document.querySelectorAll('.button-light').forEach(btn => {
+                const text = btn.querySelector('.text-button-light');
+                const div = btn.querySelector('.button-div');
+
+                if (text) text.style.color = '';
+                if (div) div.style.opacity = 0;
+            });
+
+            // Add styles to the clicked element
+            const activeText = element.querySelector('.text-button-light');
+            const activeDiv = element.querySelector('.button-div');
+
+            if (activeText) activeText.style.color = 'black';
+            if (activeDiv) activeDiv.style.opacity = 1;
         }
 
         window.onload = window.onresize = updateRightColumnHeight;
