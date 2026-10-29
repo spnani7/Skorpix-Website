@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://skorpix.co.in/sitemap.xml
