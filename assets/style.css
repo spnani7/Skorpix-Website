@@ -229,7 +229,7 @@ dialog p{color:var(--tx2);font-size:.9375rem;margin:12px 0 20px}
 @media(min-width:1100px){.gal{grid-template-columns:repeat(4,1fr)}}
 .gi{background:#fff;border:1px solid var(--olv);border-radius:18px;overflow:hidden;cursor:pointer;padding:0;text-align:left;font:inherit;color:var(--tx);transition:transform .25s,box-shadow .25s}
 .gi:hover{transform:translateY(-4px);box-shadow:var(--sh2)}.gi[hidden]{display:none}
-.gi img{display:block;width:100%;height:auto;object-fit:normal}
+.gi img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;background:#f8f9fa;padding:8px}
 .gi div{padding:12px 14px}.gi b{display:block;font-size:.9375rem;line-height:1.3}.gi small{display:block;color:var(--tx2);font-size:.8125rem;margin-top:2px}
 #lb{max-width:min(92vw,980px);padding:14px;border-radius:20px}#lb img{display:block;width:100%;max-height:78vh;object-fit:contain;border-radius:12px;background:var(--s2)}
 #lb p{margin:12px 4px;font-weight:600}#lb form{text-align:right}
