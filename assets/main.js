@@ -38,7 +38,7 @@ var REVIEWS=[
 {show:true,q:"We run hotels in several cities and every Google listing had its own problems. Skorpix sorted out the verification issues and keeps things consistent. They respond quickly whenever we call.",n:"Srikanth Mirasi",r:"Hotel Southern Suites Group"},
 {show:true,q:"Day to day I deal with the listings across our hotels. Skorpix handles the updates and follow-ups, so I don’t have to chase Google myself.",n:"Jansi Mirasi",r:"Hotel Southern Suites Group"},
 {show:true,q:"Our studio looks far more professional on Google now, and new students can see the space before they come. Skorpix was patient and helpful throughout.",n:"Suma",r:"Aura Yoga and Wellness, Mysore"},
-{show:true,q:"Patients like to see a clinic before they book. Skorpix helped us present ours properly on Google. Professional and punctual.",n:"Dr. Besvraj",r:"Raj Dental Surgery and Implant Clinic, Pune"}
+{show:true,q:"I cannot recommend Skorpix enough! We were dealing with a massive headache where our Google Business Profile phone number was stuck 'under review' on our Google Maps location for almost a month. Out of nowhere, the Skorpix team actually noticed the glitch, proactively reached out to us, and offered to help. I was blown away when they completely resolved the issue and got our number live in just 4 days. They truly know the ins and outs of Google My Business optimization. Thank you for the incredible support!",n:"Dr. Besvraj",r:"Raj Dental Surgery and Implant Clinic, Pune"}
 ].filter(function(x){return x.show});
 var l=$('rvl'),s=$('reviews');
 if(s){if(!REVIEWS.length){s.style.display='none'}else{var cl=['#4285F4','#EA4335','#F9AB00','#34A853'];
