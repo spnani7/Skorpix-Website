@@ -34,11 +34,11 @@ if(cf)cf.addEventListener('submit',function(e){e.preventDefault();var t=cf.datas
 var cp=$('cp');if(cp)cp.onclick=function(){if(navigator.clipboard)navigator.clipboard.writeText('info@skorpix.co.in');cp.textContent='Copied'};
 /* REVIEWS: each entry stays hidden until show:true. Switch one on only after the client has read and approved the exact words. */
 var REVIEWS=[
-{show:false,q:"We wanted customers to see the restaurant before walking in. Skorpix shot the 360° tour quickly and it now shows on our Google listing. Easy to work with.",n:"Gopinath",r:"Cream Centre, RA Puram, Chennai"},
-{show:false,q:"We run hotels in several cities and every Google listing had its own problems. Skorpix sorted out the verification issues and keeps things consistent. They respond quickly whenever we call.",n:"Srikanth Mirasi",r:"Hotel Southern Suites Group"},
-{show:false,q:"Day to day I deal with the listings across our hotels. Skorpix handles the updates and follow-ups, so I don’t have to chase Google myself.",n:"Jansi Mirasi",r:"Hotel Southern Suites Group"},
-{show:false,q:"Our studio looks far more professional on Google now, and new students can see the space before they come. Skorpix was patient and helpful throughout.",n:"Suma",r:"Aura Yoga and Wellness, Mysore"},
-{show:false,q:"Patients like to see a clinic before they book. Skorpix helped us present ours properly on Google. Professional and punctual.",n:"Dr. Besvraj",r:"Raj Dental Surgery and Implant Clinic, Pune"}
+{show:true,q:"We wanted customers to see the restaurant before walking in. Skorpix shot the 360° tour quickly and it now shows on our Google listing. Easy to work with.",n:"Gopinath",r:"Cream Centre, RA Puram, Chennai"},
+{show:true,q:"We run hotels in several cities and every Google listing had its own problems. Skorpix sorted out the verification issues and keeps things consistent. They respond quickly whenever we call.",n:"Srikanth Mirasi",r:"Hotel Southern Suites Group"},
+{show:true,q:"Day to day I deal with the listings across our hotels. Skorpix handles the updates and follow-ups, so I don’t have to chase Google myself.",n:"Jansi Mirasi",r:"Hotel Southern Suites Group"},
+{show:true,q:"Our studio looks far more professional on Google now, and new students can see the space before they come. Skorpix was patient and helpful throughout.",n:"Suma",r:"Aura Yoga and Wellness, Mysore"},
+{show:true,q:"Patients like to see a clinic before they book. Skorpix helped us present ours properly on Google. Professional and punctual.",n:"Dr. Besvraj",r:"Raj Dental Surgery and Implant Clinic, Pune"}
 ].filter(function(x){return x.show});
 var l=$('rvl'),s=$('reviews');
 if(s){if(!REVIEWS.length){s.style.display='none'}else{var cl=['#4285F4','#EA4335','#F9AB00','#34A853'];
